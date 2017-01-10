@@ -38,6 +38,11 @@ static  NSString *cellIdentifier = @"cellIdentifier";
     _mainTableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:_mainTableView];
     
+    // 添加导航栏右侧按钮
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"添加团组记录" style:UIBarButtonItemStylePlain target:self action:@selector(addInvoice)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+    
+    
 
 }
 
