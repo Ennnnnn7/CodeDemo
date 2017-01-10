@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "InvoiceDetailViewController.h"
 #import "HeadView.h"
 #import "MainTableViewCell.h"
 #import "InvoiceModel.h"
@@ -87,7 +88,11 @@ static  NSString *cellIdentifier = @"cellIdentifier";
 }
 
 
-
+- (void)addInvoice
+{
+    InvoiceDetailViewController *invoiceDetailVC = [[InvoiceDetailViewController alloc] init];
+    [self.navigationController pushViewController:invoiceDetailVC animated:YES];
+}
 
 
 

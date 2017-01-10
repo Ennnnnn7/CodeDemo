@@ -10,6 +10,8 @@
 
 @interface InvoiceDetailViewController ()
 
+@property (nonatomic, strong) UIButton *addButton;
+
 @end
 
 @implementation InvoiceDetailViewController
