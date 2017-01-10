@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560F2EDD1E24C64600C03B30 /* LJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F2EDC1E24C64600C03B30 /* LJImageView.m */; };
 		564A08581E2386CE00E6A285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08571E2386CE00E6A285 /* main.m */; };
 		564A085B1E2386CE00E6A285 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A085A1E2386CE00E6A285 /* AppDelegate.m */; };
 		564A08611E2386CE00E6A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A085F1E2386CE00E6A285 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		1AA00A31064FE5223F00C126 /* Pods-CodeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeDemo/Pods-CodeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		560F2EDB1E24C64600C03B30 /* LJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJImageView.h; sourceTree = "<group>"; };
+		560F2EDC1E24C64600C03B30 /* LJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJImageView.m; sourceTree = "<group>"; };
 		564A08531E2386CE00E6A285 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564A08571E2386CE00E6A285 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		564A08591E2386CE00E6A285 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,12 +103,14 @@
 		564A08551E2386CE00E6A285 /* CodeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				564A08591E2386CE00E6A285 /* AppDelegate.h */,
+				564A085A1E2386CE00E6A285 /* AppDelegate.m */,
+				560F2EDB1E24C64600C03B30 /* LJImageView.h */,
+				560F2EDC1E24C64600C03B30 /* LJImageView.m */,
 				564A088D1E24743600E6A285 /* InvoiceDetail */,
 				564A086F1E23887B00E6A285 /* Code */,
 				564A086E1E23886C00E6A285 /* Main */,
 				564A086D1E23885600E6A285 /* Login */,
-				564A08591E2386CE00E6A285 /* AppDelegate.h */,
-				564A085A1E2386CE00E6A285 /* AppDelegate.m */,
 				564A085F1E2386CE00E6A285 /* Main.storyboard */,
 				564A08861E23900800E6A285 /* PrefixHeader.pch */,
 				564A08621E2386CE00E6A285 /* Assets.xcassets */,
@@ -294,6 +299,7 @@
 				564A08851E238FDC00E6A285 /* HeadView.m in Sources */,
 				564A08581E2386CE00E6A285 /* main.m in Sources */,
 				564A08761E2389A600E6A285 /* LoginViewController.m in Sources */,
+				560F2EDD1E24C64600C03B30 /* LJImageView.m in Sources */,
 				564A088C1E246D7F00E6A285 /* InvoiceModel.m in Sources */,
 				564A08821E238FBE00E6A285 /* MainViewController.m in Sources */,
 				564A08901E24745100E6A285 /* InvoiceDetailViewController.m in Sources */,

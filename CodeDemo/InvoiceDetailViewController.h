@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "InvoiceModel.h"
 @interface InvoiceDetailViewController : UIViewController
+
+@property (nonatomic, strong) InvoiceModel *invoiceModel;
 
 @end

@@ -32,7 +32,7 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(8);
         make.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(100);
+        make.width.mas_equalTo(60);
     }];
     
     [self.firstImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -89,9 +89,8 @@
 {
     _cellModel = cellModel;
     
-    
-    _firstImageView.image = [UIImage imageNamed:cellModel.firstImageName];
-    _secondImageView.image = [UIImage imageNamed:cellModel.secondImageName];
+    _firstImageView.image = _cellModel.imageArray[0];
+    _secondImageView.image = _cellModel.imageArray[1];
 }
 
 

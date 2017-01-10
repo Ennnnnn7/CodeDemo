@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>zh_CN</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -34,5 +34,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>用一下您的蓝牙</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Demo想要调用您的相机用于拍照</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Demo想要调用您的相册用于调用图片</string>
 </dict>
 </plist>

@@ -51,8 +51,8 @@ static  NSString *cellIdentifier = @"cellIdentifier";
 - (void)addModelArray
 {
     InvoiceModel *firstModel = [[InvoiceModel alloc] init];
-    firstModel.firstImageName = @"FirstInvoice";
-    firstModel.secondImageName = @"FirstInvoiceConfirm";
+    [firstModel.imageArray addObject:[UIImage imageNamed:@"FirstInvoice"]];
+    [firstModel.imageArray addObject:[UIImage imageNamed:@"FirstInvoiceConfirm"]];
     [_modelArray addObject:firstModel];
 }
 
@@ -64,6 +64,12 @@ static  NSString *cellIdentifier = @"cellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    InvoiceDetailViewController *invoiceDetailVC = [[InvoiceDetailViewController alloc] init];
+    invoiceDetailVC.invoiceModel = _modelArray[indexPath.row];
+    [self.navigationController pushViewController:invoiceDetailVC animated:YES];
+    
+    
 }
 
 #pragma mark - TableViewDataSource

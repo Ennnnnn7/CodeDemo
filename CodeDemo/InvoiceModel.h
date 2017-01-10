@@ -10,7 +10,7 @@
 
 @interface InvoiceModel : NSObject
 
-@property (nonatomic, strong) NSString *firstImageName;
-@property (nonatomic, strong) NSString *secondImageName;
+@property (nonatomic, strong) NSMutableArray *imageArray;
+
 
 @end

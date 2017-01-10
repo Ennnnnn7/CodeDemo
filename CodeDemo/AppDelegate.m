@@ -21,6 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     UINavigationController *loginNC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    loginNC.navigationBar.tintColor = [UIColor blackColor];
     self.window.rootViewController = loginNC;
     [self.window makeKeyAndVisible];
     return YES;

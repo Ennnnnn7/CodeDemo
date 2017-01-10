@@ -10,4 +10,14 @@
 
 @implementation InvoiceModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        _imageArray = [NSMutableArray array];
+    }
+    return self;
+}
+
 @end
