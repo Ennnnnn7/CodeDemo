@@ -9,23 +9,45 @@
 /* Begin PBXBuildFile section */
 		564A08581E2386CE00E6A285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08571E2386CE00E6A285 /* main.m */; };
 		564A085B1E2386CE00E6A285 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A085A1E2386CE00E6A285 /* AppDelegate.m */; };
-		564A085E1E2386CE00E6A285 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A085D1E2386CE00E6A285 /* ViewController.m */; };
 		564A08611E2386CE00E6A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A085F1E2386CE00E6A285 /* Main.storyboard */; };
 		564A08631E2386CF00E6A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564A08621E2386CE00E6A285 /* Assets.xcassets */; };
 		564A08661E2386CF00E6A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A08641E2386CF00E6A285 /* LaunchScreen.storyboard */; };
+		564A08761E2389A600E6A285 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08741E2389A600E6A285 /* LoginViewController.m */; };
+		564A08771E2389A600E6A285 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 564A08751E2389A600E6A285 /* LoginViewController.xib */; };
+		564A08821E238FBE00E6A285 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08811E238FBE00E6A285 /* MainViewController.m */; };
+		564A08851E238FDC00E6A285 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08841E238FDC00E6A285 /* HeadView.m */; };
+		564A08891E23938400E6A285 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08881E23938300E6A285 /* MainTableViewCell.m */; };
+		564A088C1E246D7F00E6A285 /* InvoiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A088B1E246D7F00E6A285 /* InvoiceModel.m */; };
+		564A08901E24745100E6A285 /* InvoiceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A088F1E24745100E6A285 /* InvoiceDetailViewController.m */; };
+		B4834F5E94616ABF8E79C30C /* libPods-CodeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B528E4626B9C88AE16961D5D /* libPods-CodeDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AA00A31064FE5223F00C126 /* Pods-CodeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeDemo/Pods-CodeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		564A08531E2386CE00E6A285 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564A08571E2386CE00E6A285 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		564A08591E2386CE00E6A285 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		564A085A1E2386CE00E6A285 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		564A085C1E2386CE00E6A285 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		564A085D1E2386CE00E6A285 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		564A08601E2386CE00E6A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		564A08621E2386CE00E6A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		564A08651E2386CF00E6A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		564A08671E2386CF00E6A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564A08731E2389A600E6A285 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		564A08741E2389A600E6A285 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		564A08751E2389A600E6A285 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		564A08801E238FBE00E6A285 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		564A08811E238FBE00E6A285 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		564A08831E238FDC00E6A285 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
+		564A08841E238FDC00E6A285 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
+		564A08861E23900800E6A285 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		564A08871E23938300E6A285 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		564A08881E23938300E6A285 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		564A088A1E246D7F00E6A285 /* InvoiceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceModel.h; sourceTree = "<group>"; };
+		564A088B1E246D7F00E6A285 /* InvoiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceModel.m; sourceTree = "<group>"; };
+		564A088E1E24745100E6A285 /* InvoiceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceDetailViewController.h; sourceTree = "<group>"; };
+		564A088F1E24745100E6A285 /* InvoiceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceDetailViewController.m; sourceTree = "<group>"; };
+		B528E4626B9C88AE16961D5D /* libPods-CodeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0CA3762A982090F59BAEDCC /* Pods-CodeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeDemo/Pods-CodeDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4834F5E94616ABF8E79C30C /* libPods-CodeDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5227FFF9EE9B7AF907078F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B528E4626B9C88AE16961D5D /* libPods-CodeDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5044BE5E46256BD32A96BAD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AA00A31064FE5223F00C126 /* Pods-CodeDemo.debug.xcconfig */,
+				C0CA3762A982090F59BAEDCC /* Pods-CodeDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		564A084A1E2386CE00E6A285 = {
 			isa = PBXGroup;
 			children = (
 				564A08551E2386CE00E6A285 /* CodeDemo */,
 				564A08541E2386CE00E6A285 /* Products */,
+				5044BE5E46256BD32A96BAD2 /* Pods */,
+				3C5227FFF9EE9B7AF907078F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +100,14 @@
 		564A08551E2386CE00E6A285 /* CodeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				564A088D1E24743600E6A285 /* InvoiceDetail */,
+				564A086F1E23887B00E6A285 /* Code */,
+				564A086E1E23886C00E6A285 /* Main */,
+				564A086D1E23885600E6A285 /* Login */,
 				564A08591E2386CE00E6A285 /* AppDelegate.h */,
 				564A085A1E2386CE00E6A285 /* AppDelegate.m */,
-				564A085C1E2386CE00E6A285 /* ViewController.h */,
-				564A085D1E2386CE00E6A285 /* ViewController.m */,
 				564A085F1E2386CE00E6A285 /* Main.storyboard */,
+				564A08861E23900800E6A285 /* PrefixHeader.pch */,
 				564A08621E2386CE00E6A285 /* Assets.xcassets */,
 				564A08641E2386CF00E6A285 /* LaunchScreen.storyboard */,
 				564A08671E2386CF00E6A285 /* Info.plist */,
@@ -79,6 +124,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		564A086D1E23885600E6A285 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				564A08731E2389A600E6A285 /* LoginViewController.h */,
+				564A08741E2389A600E6A285 /* LoginViewController.m */,
+				564A08751E2389A600E6A285 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		564A086E1E23886C00E6A285 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				564A08801E238FBE00E6A285 /* MainViewController.h */,
+				564A08811E238FBE00E6A285 /* MainViewController.m */,
+				564A08831E238FDC00E6A285 /* HeadView.h */,
+				564A08841E238FDC00E6A285 /* HeadView.m */,
+				564A08871E23938300E6A285 /* MainTableViewCell.h */,
+				564A08881E23938300E6A285 /* MainTableViewCell.m */,
+				564A088A1E246D7F00E6A285 /* InvoiceModel.h */,
+				564A088B1E246D7F00E6A285 /* InvoiceModel.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		564A086F1E23887B00E6A285 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		564A088D1E24743600E6A285 /* InvoiceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				564A088E1E24745100E6A285 /* InvoiceDetailViewController.h */,
+				564A088F1E24745100E6A285 /* InvoiceDetailViewController.m */,
+			);
+			name = InvoiceDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 564A086A1E2386CF00E6A285 /* Build configuration list for PBXNativeTarget "CodeDemo" */;
 			buildPhases = (
+				AE9EB92E2F78651C286D7FA6 /* [CP] Check Pods Manifest.lock */,
 				564A084F1E2386CE00E6A285 /* Sources */,
 				564A08501E2386CE00E6A285 /* Frameworks */,
 				564A08511E2386CE00E6A285 /* Resources */,
+				C7E89C0234224AF7F258BDA3 /* [CP] Embed Pods Frameworks */,
+				4929BBEBBC70C5BACF69DC54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564A08771E2389A600E6A285 /* LoginViewController.xib in Resources */,
 				564A08661E2386CF00E6A285 /* LaunchScreen.storyboard in Resources */,
 				564A08631E2386CF00E6A285 /* Assets.xcassets in Resources */,
 				564A08611E2386CE00E6A285 /* Main.storyboard in Resources */,
@@ -146,14 +236,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4929BBEBBC70C5BACF69DC54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeDemo/Pods-CodeDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE9EB92E2F78651C286D7FA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7E89C0234224AF7F258BDA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeDemo/Pods-CodeDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		564A084F1E2386CE00E6A285 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				564A085E1E2386CE00E6A285 /* ViewController.m in Sources */,
+				564A08891E23938400E6A285 /* MainTableViewCell.m in Sources */,
 				564A085B1E2386CE00E6A285 /* AppDelegate.m in Sources */,
+				564A08851E238FDC00E6A285 /* HeadView.m in Sources */,
 				564A08581E2386CE00E6A285 /* main.m in Sources */,
+				564A08761E2389A600E6A285 /* LoginViewController.m in Sources */,
+				564A088C1E246D7F00E6A285 /* InvoiceModel.m in Sources */,
+				564A08821E238FBE00E6A285 /* MainViewController.m in Sources */,
+				564A08901E24745100E6A285 /* InvoiceDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +412,14 @@
 		};
 		564A086B1E2386CF00E6A285 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AA00A31064FE5223F00C126 /* Pods-CodeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HB22SQJ4PW;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/liujie/Desktop/CodeDemo/CodeDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CodeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,10 +428,14 @@
 		};
 		564A086C1E2386CF00E6A285 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0CA3762A982090F59BAEDCC /* Pods-CodeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HB22SQJ4PW;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/liujie/Desktop/CodeDemo/CodeDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CodeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,6 +461,7 @@
 				564A086C1E2386CF00E6A285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
