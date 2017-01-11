@@ -40,5 +40,10 @@
 	<string>Demo想要调用您的相机用于拍照</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Demo想要调用您的相册用于调用图片</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

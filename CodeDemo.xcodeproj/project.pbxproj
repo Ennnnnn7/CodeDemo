@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		560F2EDD1E24C64600C03B30 /* LJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F2EDC1E24C64600C03B30 /* LJImageView.m */; };
+		560F2EE01E24D65A00C03B30 /* ScanCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F2EDF1E24D65A00C03B30 /* ScanCodeViewController.m */; };
+		560F2EE31E24D96400C03B30 /* ConfirmWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F2EE21E24D96400C03B30 /* ConfirmWebViewController.m */; };
+		560F2EE71E24DE0B00C03B30 /* DemoCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 560F2EE61E24DE0B00C03B30 /* DemoCertificate.cer */; };
 		564A08581E2386CE00E6A285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A08571E2386CE00E6A285 /* main.m */; };
 		564A085B1E2386CE00E6A285 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A085A1E2386CE00E6A285 /* AppDelegate.m */; };
 		564A08611E2386CE00E6A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A085F1E2386CE00E6A285 /* Main.storyboard */; };
@@ -27,6 +30,11 @@
 		1AA00A31064FE5223F00C126 /* Pods-CodeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeDemo/Pods-CodeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		560F2EDB1E24C64600C03B30 /* LJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJImageView.h; sourceTree = "<group>"; };
 		560F2EDC1E24C64600C03B30 /* LJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJImageView.m; sourceTree = "<group>"; };
+		560F2EDE1E24D65A00C03B30 /* ScanCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCodeViewController.h; sourceTree = "<group>"; };
+		560F2EDF1E24D65A00C03B30 /* ScanCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCodeViewController.m; sourceTree = "<group>"; };
+		560F2EE11E24D96400C03B30 /* ConfirmWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmWebViewController.h; sourceTree = "<group>"; };
+		560F2EE21E24D96400C03B30 /* ConfirmWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmWebViewController.m; sourceTree = "<group>"; };
+		560F2EE61E24DE0B00C03B30 /* DemoCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = DemoCertificate.cer; sourceTree = "<group>"; };
 		564A08531E2386CE00E6A285 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564A08571E2386CE00E6A285 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		564A08591E2386CE00E6A285 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 				564A085F1E2386CE00E6A285 /* Main.storyboard */,
 				564A08861E23900800E6A285 /* PrefixHeader.pch */,
 				564A08621E2386CE00E6A285 /* Assets.xcassets */,
+				560F2EE61E24DE0B00C03B30 /* DemoCertificate.cer */,
 				564A08641E2386CF00E6A285 /* LaunchScreen.storyboard */,
 				564A08671E2386CF00E6A285 /* Info.plist */,
 				564A08561E2386CE00E6A285 /* Supporting Files */,
@@ -157,6 +166,10 @@
 		564A086F1E23887B00E6A285 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				560F2EDE1E24D65A00C03B30 /* ScanCodeViewController.h */,
+				560F2EDF1E24D65A00C03B30 /* ScanCodeViewController.m */,
+				560F2EE11E24D96400C03B30 /* ConfirmWebViewController.h */,
+				560F2EE21E24D96400C03B30 /* ConfirmWebViewController.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 			files = (
 				564A08771E2389A600E6A285 /* LoginViewController.xib in Resources */,
 				564A08661E2386CF00E6A285 /* LaunchScreen.storyboard in Resources */,
+				560F2EE71E24DE0B00C03B30 /* DemoCertificate.cer in Resources */,
 				564A08631E2386CF00E6A285 /* Assets.xcassets in Resources */,
 				564A08611E2386CE00E6A285 /* Main.storyboard in Resources */,
 			);
@@ -295,7 +309,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				564A08891E23938400E6A285 /* MainTableViewCell.m in Sources */,
+				560F2EE31E24D96400C03B30 /* ConfirmWebViewController.m in Sources */,
 				564A085B1E2386CE00E6A285 /* AppDelegate.m in Sources */,
+				560F2EE01E24D65A00C03B30 /* ScanCodeViewController.m in Sources */,
 				564A08851E238FDC00E6A285 /* HeadView.m in Sources */,
 				564A08581E2386CE00E6A285 /* main.m in Sources */,
 				564A08761E2389A600E6A285 /* LoginViewController.m in Sources */,

@@ -11,16 +11,21 @@
 #import <AVFoundation/AVMediaFormat.h>
 #import <Photos/Photos.h>
 #import "LJImageView.h"
+#import "ScanCodeViewController.h"
+#import "ConfirmWebViewController.h"
+
 
 @interface InvoiceDetailViewController ()<UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIButton *addButton;
 @property (nonatomic, strong) LJImageView *invoiceImageView;
 @property (nonatomic, strong) LJImageView *invoiceConfirmImagView;
-@property (nonatomic) CGRect invoiceLastRect;
+
+@property (nonatomic, getter=isHaveQRCode) BOOL haveQRCode;
+@property (nonatomic, strong) NSString *QRCodeString;
 @property (nonatomic) BOOL invoiceIsBig;
-@property (nonatomic) CGRect invoiceConfirmLastRect;
 @property (nonatomic) BOOL invoiceConfirmIsBig;
+@property (nonatomic, strong) UIImage *invoiceImage;
 
 
 
@@ -46,9 +51,24 @@
     } else
     {
         [_addButton setHidden:NO];
+        UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(updateInfo)];
+        self.navigationItem.rightBarButtonItem = rightBarButton;
     }
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(writeImage:) name:@"SnapShortImageNotification" object:nil];
+    
+    
 
+}
+- (void)writeImage:(NSNotification *)notification
+{
+    UIImage *snapImage = notification.userInfo[@"snapImage"];
+    _invoiceConfirmImagView.image = snapImage;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)createSubViews
@@ -86,19 +106,67 @@
 
 - (void)addTapFesture
 {
-    [_invoiceImageView.singleTap addTarget:self action:@selector(imageTapAction:)];
+    if (!_invoiceModel)
+    {
+        [_invoiceImageView.singleTap addTarget:self action:@selector(imageTapAction:)];
+    }
     [_invoiceImageView.doubleTap addTarget:self action:@selector(imageTapAction:)];
     
     [_invoiceConfirmImagView.singleTap addTarget:self action:@selector(confirmImageTapAction:)];
     [_invoiceConfirmImagView.doubleTap addTarget:self action:@selector(confirmImageTapAction:)];
 }
 
+// 发票图片点击手势
 - (void)imageTapAction:(UITapGestureRecognizer *)tapGesture
 {
     [self.view bringSubviewToFront:_invoiceImageView];
     if (tapGesture.numberOfTapsRequired == 1)
     {
-        NSLog(@"这是单击");
+        
+        if (_haveQRCode)
+        {
+            NSArray<NSString *> *qrCodeArray = [_QRCodeString componentsSeparatedByString:@","];
+            
+            if (qrCodeArray.count >= 9)
+            {
+                
+                NSString *alertTitle = [NSString stringWithFormat:@"发票号码是:%@\n发票代码是:%@",qrCodeArray[2],qrCodeArray[3]];
+                
+                //输出扫描字符串
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:alertTitle preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                }];
+                UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"前往鉴真" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    ConfirmWebViewController *confirmWebVC = [[ConfirmWebViewController alloc] init];
+                    confirmWebVC.infoArray = qrCodeArray;
+                    [self.navigationController pushViewController:confirmWebVC animated:YES];
+                    
+                    
+                }];
+                [alertVC addAction:cancelAction];
+                [alertVC addAction:confirmAction];
+                [self presentViewController:alertVC animated:YES completion:^{
+                }];
+            }
+        } else
+        {
+            UIAlertController *firstAlert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请选择获取发票信息方式" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *handAction = [UIAlertAction actionWithTitle:@"手动输入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                ConfirmWebViewController *confirmWebVC = [[ConfirmWebViewController alloc] init];
+                [self.navigationController pushViewController:confirmWebVC animated:YES];
+            }];
+            UIAlertAction *scanCodeAction = [UIAlertAction actionWithTitle:@"前往扫描二维码" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                ScanCodeViewController *scanCodeVC = [[ScanCodeViewController alloc] init];
+                [self.navigationController pushViewController:scanCodeVC animated:YES];
+            }];
+            
+            [firstAlert addAction:handAction];
+            [firstAlert addAction:scanCodeAction];
+            [firstAlert addAction:cancelAction];
+            [self presentViewController:firstAlert animated:YES completion:nil];
+        }
+
     } else
     {
         NSLog(@"这是双击");
@@ -252,10 +320,46 @@
 #pragma mark - UIImagePickerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage *noEditImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+
     _invoiceImageView.image = noEditImage;
+    _invoiceImage = noEditImage;
+    UIImage *srcImage = _invoiceImage;
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:context options:@{CIDetectorAccuracy : CIDetectorAccuracyHigh}];
+    CIImage *tempImage = [CIImage imageWithCGImage:srcImage.CGImage];
+    NSArray *features = [detector featuresInImage:tempImage];
+    if (features.count)
+    {
+        _haveQRCode = YES;
+        CIQRCodeFeature *codeFeature = [features firstObject];
+        _QRCodeString = codeFeature.messageString;
+    } else
+    {
+        _haveQRCode = NO;
+    }
+    
+    
 }
+
+
+- (void)updateInfo
+{
+    if (_invoiceImageView.image)
+    {
+        _invoiceModel = [[InvoiceModel alloc] init];
+        [_invoiceModel.imageArray addObject:_invoiceImageView.image];
+        [_invoiceModel.imageArray addObject:_invoiceConfirmImagView.image];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"updateInvoiceInfo" object:nil userInfo:@{@"invoiceInfo":_invoiceModel}];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
+    
+}
+
 
 
 
@@ -264,14 +368,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

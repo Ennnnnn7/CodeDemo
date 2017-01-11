@@ -18,7 +18,7 @@
 @end
 
 @implementation MainViewController
-static  NSString *cellIdentifier = @"cellIdentifier";
+static  NSString * const cellIdentifier = @"cellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +44,7 @@ static  NSString *cellIdentifier = @"cellIdentifier";
     self.navigationItem.rightBarButtonItem = rightBtn;
     
     
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNewInvoice:) name:@"updateInvoiceInfo" object:nil];
 }
 
 
@@ -79,7 +79,7 @@ static  NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return _modelArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,7 +100,18 @@ static  NSString *cellIdentifier = @"cellIdentifier";
     [self.navigationController pushViewController:invoiceDetailVC animated:YES];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+
+- (void)addNewInvoice:(NSNotification *)notification
+{
+    InvoiceModel *tempModel = notification.userInfo[@"invoiceInfo"];
+    [_modelArray addObject:tempModel];
+    [_mainTableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
