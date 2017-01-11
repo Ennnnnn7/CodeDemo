@@ -275,7 +275,6 @@
         {
             UIImagePickerController *imagePickerVC = [[UIImagePickerController alloc] init];
             imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-            imagePickerVC.allowsEditing = YES;
             imagePickerVC.delegate = self;
             [self presentViewController:imagePickerVC animated:YES completion:^{
                 
@@ -295,7 +294,7 @@
         {
             UIImagePickerController *imagePickerVC = [[UIImagePickerController alloc] init];
             imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            imagePickerVC.allowsEditing = YES;
+            
             imagePickerVC.delegate = self;
             [self presentViewController:imagePickerVC animated:YES completion:^{
                 
@@ -347,7 +346,7 @@
 
 - (void)updateInfo
 {
-    if (_invoiceImageView.image)
+    if (_invoiceImageView.image && _invoiceConfirmImagView.image)
     {
         _invoiceModel = [[InvoiceModel alloc] init];
         [_invoiceModel.imageArray addObject:_invoiceImageView.image];
