@@ -127,7 +127,7 @@
         {
             NSArray<NSString *> *qrCodeArray = [_QRCodeString componentsSeparatedByString:@","];
             
-            if (qrCodeArray.count >= 9)
+            if (qrCodeArray.count >= 6)
             {
                 
                 NSString *alertTitle = [NSString stringWithFormat:@"发票号码是:%@\n发票代码是:%@",qrCodeArray[2],qrCodeArray[3]];

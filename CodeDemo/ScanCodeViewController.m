@@ -104,7 +104,7 @@
         NSArray<NSString *> *codeStringArray = [metadataObject.stringValue componentsSeparatedByString:@","];
         
         
-        if (codeStringArray.count >= 9) {
+        if (codeStringArray.count >= 6) {
             
             NSString *alertTitle = [NSString stringWithFormat:@"发票号码是:%@\n发票代码是:%@",codeStringArray[2],codeStringArray[3]];
         //输出扫描字符串

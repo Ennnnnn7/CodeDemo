@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "ConfirmWebViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginViewController *loginVC = [[LoginViewController alloc] init];
-    UINavigationController *loginNC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    
+    ConfirmWebViewController *confirmVC = [[ConfirmWebViewController alloc] init];
+    
+    UINavigationController *loginNC = [[UINavigationController alloc] initWithRootViewController:confirmVC];
     loginNC.navigationBar.tintColor = [UIColor blackColor];
     self.window.rootViewController = loginNC;
     [self.window makeKeyAndVisible];

@@ -8,6 +8,8 @@
 
 #import "ConfirmWebViewController.h"
 #import <WebKit/WebKit.h>
+#import "WKWebView+LJCapture.h"
+#import "UIView+LJCapture.h"
 
 @interface ConfirmWebViewController () <WKUIDelegate, WKNavigationDelegate>
 
@@ -21,16 +23,17 @@
     [super viewDidLoad];
     self.title = @"发票鉴真";
     self.view.backgroundColor = [UIColor whiteColor];
-    _webView = [[WKWebView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
+    
     [self.view addSubview:_webView];
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://inv-veri.chinatax.gov.cn/"]]];
+//    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.startry.com"]]];
+    
     
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"截屏" style:UIBarButtonItemStylePlain target:self action:@selector(cutScreen)];
     self.navigationItem.rightBarButtonItem = rightBtn;
-    
-    
     
 }
 
@@ -78,7 +81,77 @@
 }
 
 
-- (void)cutScreen
+
+- (void)cutScreen {
+//    CGRect snapshotFrame = CGRectMake(0, 0, _webView.scrollView.contentSize.width, _webView.scrollView.contentSize.height);
+//    UIEdgeInsets snapshotEdgeInsets = UIEdgeInsetsZero;
+//    UIImage *shareImage = [self snapshotViewFromRect:snapshotFrame withCapInsets:snapshotEdgeInsets];
+    [_webView lj_contentCaptureWithHandle:^(UIImage *captureImage) {
+        NSString *path_document = NSHomeDirectory();
+        //设置一个图片的存储路径
+        
+        NSString *imagePath = [path_document stringByAppendingString:@"/Documents/picc.png"];
+        //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
+        
+        NSLog(@"%@",imagePath);
+        
+        [UIImagePNGRepresentation(captureImage) writeToFile:imagePath atomically:YES];
+        UIImageWriteToSavedPhotosAlbum(captureImage, NULL, NULL, NULL);
+    }];
+    
+}
+
+
+- (UIImage *)snapshotViewFromRect:(CGRect)rect withCapInsets:(UIEdgeInsets)capInsets {
+    
+    CGFloat scale = [UIScreen mainScreen].scale;
+    
+    CGSize boundsSize = self.webView.bounds.size;
+    CGFloat boundsWidth = boundsSize.width;
+    CGFloat boundsHeight = boundsSize.height;
+    
+    CGSize contentSize = self.webView.scrollView.contentSize;
+    CGFloat contentHeight = contentSize.height;
+    CGFloat contentWidth = contentSize.width;
+    
+    CGPoint offset = self.webView.scrollView.contentOffset;
+    
+    [self.webView.scrollView setContentOffset:CGPointMake(0, 0)];
+    
+    NSMutableArray *images = [NSMutableArray array];
+    while (contentHeight > 0) {
+        UIGraphicsBeginImageContextWithOptions(boundsSize, NO, [UIScreen mainScreen].scale);
+        [self.webView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        [images addObject:image];
+        
+        CGFloat offsetY = self.webView.scrollView.contentOffset.y;
+        [self.webView.scrollView setContentOffset:CGPointMake(0, offsetY + boundsHeight)];
+        contentHeight -= boundsHeight;
+    }
+    
+    
+    [self.webView.scrollView setContentOffset:offset];
+    
+    CGSize imageSize = CGSizeMake(contentSize.width * scale,
+                                  contentSize.height * scale);
+    UIGraphicsBeginImageContext(imageSize);
+    [images enumerateObjectsUsingBlock:^(UIImage *image, NSUInteger idx, BOOL *stop) {
+        [image drawInRect:CGRectMake(0,
+                                     scale * boundsHeight * idx,
+                                     scale * boundsWidth,
+                                     scale * boundsHeight)];
+    }];
+    UIImage *fullImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageView * snapshotView = [[UIImageView alloc]initWithFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)];
+    
+    snapshotView.image = [fullImage resizableImageWithCapInsets:capInsets];
+    return snapshotView.image;
+}
+
+- (void)cutScreentest
 {
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
@@ -100,6 +173,11 @@
     }];
     
 }
+
+//- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+//{
+//    return nil;
+//}
 
 
 - (void)didReceiveMemoryWarning {
