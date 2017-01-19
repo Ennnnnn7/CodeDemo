@@ -80,7 +80,10 @@
     }
 }
 
-
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler
+{
+    NSLog(@"Prompt:%@ \n defaultText:%@ \n ",prompt,defaultText);
+}
 
 - (void)cutScreen {
 //    CGRect snapshotFrame = CGRectMake(0, 0, _webView.scrollView.contentSize.width, _webView.scrollView.contentSize.height);
